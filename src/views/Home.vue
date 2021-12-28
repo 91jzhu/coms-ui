@@ -3,9 +3,8 @@
   <div class="banner">
     <h1>ui</h1>
     <h2>一个有意思的 ui 框架</h2>
-    <p>
+    <p class="actions">
       <a>Github</a>
-      <br/>
       <router-link to="/doc">开始</router-link>
     </p>
   </div>
@@ -21,5 +20,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.banner {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: lightgreen;
+  > .actions{
+    padding: 8px 0;
+    a {
+      margin:0 8px;
+      background: #fff;
+      display: inline-block;
+      $h: 28px;
+      height: $h;
+      line-height: $h;
+      border-radius: $h/2;
+      padding: 0 8px;
+    }
+  }
+}
 </style>
