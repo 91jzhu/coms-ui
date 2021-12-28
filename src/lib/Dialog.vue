@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="dialog-overlay"></div>
-    <div class="dialog-wrapper">
-      <div class="dialog">
-        <header>
-          <slot name="title"/>
-          <span class="dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button @click="ok">OK</Button>
-          <Button @click="cancel">Cancel</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="dialog-overlay"></div>
+      <div class="dialog-wrapper">
+        <div class="dialog">
+          <header>
+            <slot name="title"/>
+            <span class="dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button @click="ok">OK</Button>
+            <Button @click="cancel">Cancel</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -30,26 +32,26 @@ export default {
       type: Boolean,
       default: false
     },
-    ok:{
-      type:Function
+    ok: {
+      type: Function
     },
-    cancel:{
-      type:Function
+    cancel: {
+      type: Function
     },
   },
-  setup(props,context){
-    const close=()=>{
-      context.emit('update:visible',!props.visible)
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', !props.visible)
     }
-    const ok=()=>{
-      if(props.ok&&props.ok()!==false){
-       close()
+    const ok = () => {
+      if (props.ok && props.ok() !== false) {
+        close()
       }
     }
-    const cancel=()=>{
+    const cancel = () => {
       props.cancel()
     }
-    return {close,ok,cancel}
+    return {close, ok, cancel}
   }
 }
 </script>
