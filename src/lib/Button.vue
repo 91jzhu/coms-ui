@@ -1,14 +1,32 @@
 <template>
   <button class="gulu-button"
-    :class="`theme-${theme?theme:'button'}`">
+          :class="classes">
     <slot/>
   </button>
 </template>
 
 <script lang="ts">
+import {computed} from 'vue'
+
 export default {
-  props:{
-    theme:String
+  props: {
+    theme: {
+      type: String,
+      default: 'button'
+    },
+    size: {
+      type: String,
+      default: 'normal'
+    },
+  },
+  setup(props) {
+    const classes = computed(() => {
+      return {
+        [`theme-${props.theme}`]: props.theme,
+        [`size-${props.size}`]: props.size,
+      }
+    })
+    return {classes}
   }
 }
 </script>
@@ -33,35 +51,57 @@ $radius: 4px;
   border: 1px solid $border-color;
   border-radius: $radius;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
+
   & + & {
     margin-left: 8px;
   }
+
   &:hover,
   &:focus {
     color: $blue;
     border-color: $blue;
   }
+
   &:focus {
     outline: none;
   }
+
   &::-moz-focus-inner {
     border: 0;
   }
-  &.theme-link{
+
+  &.theme-link {
     border-color: transparent;
     box-shadow: none;
     color: $blue;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       color: lighten($blue, 10%);
     }
   }
-  &.theme-text{
+
+  &.theme-text {
     border-color: transparent;
     box-shadow: none;
     color: inherit;
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       background: darken(white, 5%);;
     }
   }
+
+  //&.theme-button {
+  //  &.size-small {
+  //    font-size: 12px;
+  //    height: 20px;
+  //    padding: 0 4px;
+  //  }
+  //  &.size-big {
+  //    border:10px solid red;
+  //    font-size: 24px;
+  //    height: 48px;
+  //    padding: 0 16px
+  //  }
+  //}
 }
 </style>

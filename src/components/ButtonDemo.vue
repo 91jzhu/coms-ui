@@ -1,11 +1,7 @@
 <template>
-  <Button>nihao</Button>
-  <hr/>
-  <Button theme="button">nihao</Button>
-  <hr/>
-  <Button theme="link">link</Button>
-  <hr/>
-  <Button theme="text">text</Button>
+  <Button theme="button" size="small">nihao</Button>
+  <Button theme="link" size="normal">link</Button>
+  <Button theme="text" size="big">大大大</Button>
 </template>
 
 <script lang="ts">
