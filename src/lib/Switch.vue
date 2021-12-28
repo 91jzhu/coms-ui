@@ -18,7 +18,7 @@ export default {
       context.emit('update:value',!props.value)
       props.func()
     }
-    return {toggle}
+    return {close: toggle}
   }
 }
 </script>

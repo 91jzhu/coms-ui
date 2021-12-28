@@ -1,5 +1,5 @@
 <template>
-  <Dialog v-model:visible="x"/>
+  <Dialog v-model:visible="x" :ok="f1" :cancel="f2"/>
   <Button @click="toggle">dialog</Button>
 </template>
 
@@ -16,7 +16,9 @@ export default {
       x.value=!x.value
       console.log(x.value);
     }
-    return {toggle,x}
+    const f1=()=>{console.log('ok')}
+    const f2=()=>{console.log('cancel')}
+    return {toggle,x,f1,f2}
   }
 }
 </script>
