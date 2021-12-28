@@ -1,10 +1,12 @@
 <template>
-  doc默认页面
+  <Switch/>
 </template>
 
 <script lang="ts">
+import Switch from '../lib/Switch.vue'
 export default {
-  name: "DocDemo"
+  name: "SwitchDemo",
+  components: {Switch},
 }
 </script>
 

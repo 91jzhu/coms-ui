@@ -30,9 +30,9 @@ export default {
   display: flex;
   padding: 16px;
   position: fixed;
-  top:0;
-  left:0;
-  width:100%;
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -58,13 +58,13 @@ export default {
     width: 30px;
     height: 30px;
     position: absolute;
-    left:4%;
-    top:50%;
+    left: 4%;
+    top: 50%;
     margin-top: -15px;
   }
 
   @media (max-width: 500px) {
-    > .toggleAside{
+    > .toggleAside {
       display: block;
     }
     > .menu {

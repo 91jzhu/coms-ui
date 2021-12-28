@@ -1,10 +1,10 @@
 <template>
-  doc默认页面
+
 </template>
 
 <script lang="ts">
 export default {
-  name: "DocDemo"
+  name: "TabsDemo"
 }
 </script>
 
