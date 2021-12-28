@@ -23,6 +23,7 @@
 
 <script lang="ts">
 import Button from './Button.vue'
+import {nextTick, onMounted} from "vue";
 
 export default {
   name: "Dialog",
@@ -40,16 +41,22 @@ export default {
     },
   },
   setup(props, context) {
+    // onMounted(()=>{
+    //   console.log(props);
+    // })
     const close = () => {
+      console.log(props);
       context.emit('update:visible', !props.visible)
     }
     const ok = () => {
       if (props.ok && props.ok() !== false) {
+        props.ok()
         close()
       }
     }
     const cancel = () => {
-      props.cancel()
+      props.cancel&&props.cancel()
+      close()
     }
     return {close, ok, cancel}
   }

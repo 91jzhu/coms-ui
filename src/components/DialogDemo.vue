@@ -8,12 +8,16 @@
     </template>
   </Dialog>
   <Button @click="toggle">dialog</Button>
+  <hr/>
+  <Button @click="show">show</Button>
 </template>
 
 <script lang="ts">
 import Dialog from "../lib/Dialog.vue";
 import Button from "../lib/Button.vue";
+import {openDialog} from "../lib/openDialog";
 import {ref} from "vue";
+
 export default {
   name: "DialogDemo",
   components: {Button, Dialog},
@@ -21,11 +25,13 @@ export default {
     const x=ref(false)
     const toggle=()=>{
       x.value=!x.value
-      console.log(x.value);
     }
-    const f1=()=>{console.log('ok')}
+    const f1=()=>{console.log('ok');return false}
     const f2=()=>{console.log('cancel')}
-    return {toggle,x,f1,f2}
+    const show=()=>{
+      openDialog({title:'新标题',content:'新内容',ok:f1,cancel:f2})
+    }
+    return {toggle,x,f1,f2,show}
   }
 }
 </script>
