@@ -1,5 +1,7 @@
 <template>
-
+  <button>
+    <slot/>
+  </button>
 </template>
 
 <script lang="ts">
@@ -8,6 +10,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
