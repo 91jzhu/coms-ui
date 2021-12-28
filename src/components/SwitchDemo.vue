@@ -1,5 +1,5 @@
 <template>
-  <Switch v-model:value="bool" :func="onClick"/>
+  <Switch v-model:value="bool" type="right" :func="onClick"/>
 </template>
 
 <script lang="ts">
