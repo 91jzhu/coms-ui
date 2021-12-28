@@ -11,8 +11,11 @@ const router=createRouter({
     history,
     routes:[
         {path:'/',component:Home},
-        {path:'/doc',component:Doc},        {path:'/doc',component:Doc},
-
+        {path:'/doc',component:Doc},
+        // {path:'/doc/switch',component:Switch},
+        // {path:'/doc/button',component:Button},
+        // {path:'/doc/dialog',component:Dialog},
+        // {path:'/doc/tabs',component:Tabs},
     ]
 })
 
