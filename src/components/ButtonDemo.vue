@@ -1,7 +1,7 @@
 <template>
   <Button theme="button" size="small">nihao</Button>
   <Button theme="link" size="normal">link</Button>
-  <Button theme="text" size="big">大大大</Button>
+  <Button theme="text" size="big">大</Button>
 </template>
 
 <script lang="ts">
