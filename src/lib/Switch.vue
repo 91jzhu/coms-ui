@@ -1,6 +1,6 @@
 <template>
-  <button ref="btn">
-    <span @click.stop="toggle" ref="sp"></span>
+  <button>
+    <span></span>
   </button>
 </template>
 
@@ -10,10 +10,7 @@
 export default {
   name: "Switch",
   methods:{
-    toggle(){
-      let {width}=this.$refs.btn.getBoundingClientRect()
-      this.$refs.sp.style.left=width-20+'px'
-    }
+
   }
 }
 </script>
@@ -38,5 +35,8 @@ span {
   width: $h2;
   background: white;
   border-radius: $h2/2;
+}
+button:hover > span{
+  left:calc(100% - #{$h2} - 2px)
 }
 </style>
