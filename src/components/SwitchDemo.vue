@@ -1,5 +1,5 @@
 <template>
-  <Switch v-model:value="y"/>
+  <Switch v-model:value="bool" :func="onClick"/>
 </template>
 
 <script lang="ts">
@@ -9,8 +9,11 @@ export default {
   name: "SwitchDemo",
   components: {Switch},
   setup(){
-    const y=ref(false)
-    return {y}
+    const bool=ref(false)
+    const onClick=()=>{
+      console.log('变化了')
+    }
+    return {bool,onClick}
   }
 }
 </script>
