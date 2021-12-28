@@ -1,5 +1,11 @@
 <template>
   <Button>nihao</Button>
+  <hr/>
+  <Button theme="button">nihao</Button>
+  <hr/>
+  <Button theme="link">nihao</Button>
+  <hr/>
+  <Button theme="text">nihao</Button>
 </template>
 
 <script lang="ts">
