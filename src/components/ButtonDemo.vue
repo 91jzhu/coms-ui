@@ -3,9 +3,9 @@
   <hr/>
   <Button theme="button">nihao</Button>
   <hr/>
-  <Button theme="link">nihao</Button>
+  <Button theme="link">link</Button>
   <hr/>
-  <Button theme="text">nihao</Button>
+  <Button theme="text">text</Button>
 </template>
 
 <script lang="ts">
