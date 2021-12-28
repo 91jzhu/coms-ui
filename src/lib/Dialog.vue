@@ -3,10 +3,12 @@
     <div class="dialog-overlay"></div>
     <div class="dialog-wrapper">
       <div class="dialog">
-        <header>标题<span class="dialog-close" @click="close"></span></header>
+        <header>
+          <slot name="title"/>
+          <span class="dialog-close" @click="close"></span>
+        </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content"/>
         </main>
         <footer>
           <Button @click="ok">OK</Button>
@@ -33,7 +35,7 @@ export default {
     },
     cancel:{
       type:Function
-    }
+    },
   },
   setup(props,context){
     const close=()=>{

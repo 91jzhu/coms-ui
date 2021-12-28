@@ -1,5 +1,12 @@
 <template>
-  <Dialog v-model:visible="x" :ok="f1" :cancel="f2"/>
+  <Dialog v-model:visible="x" :ok="f1" :cancel="f2">
+    <template v-slot:title>
+      <strong>我的标题</strong>
+    </template>
+    <template v-slot:content>
+      <a>我的内容</a>
+    </template>
+  </Dialog>
   <Button @click="toggle">dialog</Button>
 </template>
 
