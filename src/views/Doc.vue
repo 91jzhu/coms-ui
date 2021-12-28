@@ -10,7 +10,7 @@
         <li><router-link to="/doc/tabs">Tabs 组件</router-link></li>
       </ol>
     </aside>
-    <main>主内容</main>
+      <router-view/>
   </div>
 </template>
 
