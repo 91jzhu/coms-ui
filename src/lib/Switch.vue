@@ -23,33 +23,33 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
 button {
   cursor: pointer;
-  height: $h;
-  width: $h * 2;
+  height: 1.375rem;
+  width: 2.75rem;
   border: none;
   background: grey;
-  border-radius: $h/2;
+  border-radius: 11px;
   position: relative;
   > span.left {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: $h2;
-    width: $h2;
+    height: 1.125rem;
+    width: 1.125rem;
     background: white;
-    border-radius: $h2/2;
+    border-radius: 11px;
     transition: left 250ms;
   }
   > span.right {
     position: absolute;
     top: 2px;
     right: 2px;
-    height: $h2;
-    width: $h2;
+    height: 1.125rem;
+    width: 1.125rem;
     background: white;
     border-radius: $h2/2;
     transition: right 250ms;
@@ -57,19 +57,19 @@ button {
   &.checked{
     background: blue;
     > span.left{
-      left:calc(100% - #{$h2} - 2px)
+      left:calc(100% - 1.125rem - 2px)
     }
     > span.right{
-      right:calc(100% - #{$h2} - 2px)
+      right:calc(100% - 1.125rem - 2px)
     }
   }
   &.checked:active{
     > span.left{
-      width:$h2+4px;
+      width:20px;
       margin-left: -4px;
     }
     > span.right{
-      width:$h2+4px;
+      width:20px;
       margin-right: -4px;
     }
   }
