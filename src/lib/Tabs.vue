@@ -5,7 +5,7 @@
            @click="select(t)"
            class="tabs-nav-item"
            v-for="(t,index) in titles"
-           :ref="el=>{if(el)navItems[index]=el}"
+           :ref="el=>{if(t===selected) selectedItem=el}"
            :key="index">{{ t }}
       </div>
       <div class="tabs-nav-indicator" ref="line"></div>
@@ -18,8 +18,10 @@
 </template>
 
 <script lang="ts">
+
 import Tab from './Tab.vue'
 import {computed, onMounted, onUpdated, ref} from "vue";
+
 export default {
   name: "Tabs",
   props: {
@@ -27,9 +29,9 @@ export default {
     required: false
   },
   setup(props, context) {
-    const navItems=ref<HTMLDivElement[]>([])
-    const line=ref<HTMLDivElement>(null)
-    const container=ref<HTMLDivElement>(null)
+    const selectedItem = ref<HTMLDivElement>(null)
+    const line = ref<HTMLDivElement>(null)
+    const container = ref<HTMLDivElement>(null)
     const defaults = context.slots.default()
     defaults.forEach((tag) => {
       if (tag.type !== Tab) {
@@ -42,19 +44,17 @@ export default {
     const select = (title) => {
       context.emit("update:selected", title)
     }
-    const x=()=>{
-      const divs=navItems.value
-      const result=divs.filter(div=>div.classList.contains('selected'))[0]
-      const {width}=result.getBoundingClientRect();
-      const {left:left1}=container.value.getBoundingClientRect()
-      line.value.style.width=width+'px'
-      const {left:left2}=result.getBoundingClientRect()
-      const left=left2-left1
-      line.value.style.left=left+'px'
+    const x = () => {
+      const {width} = selectedItem.value.getBoundingClientRect();
+      const {left: left1} = container.value.getBoundingClientRect()
+      line.value.style.width = width + 'px'
+      const {left: left2} = selectedItem.value.getBoundingClientRect()
+      const left = left2 - left1
+      line.value.style.left = left + 'px'
     }
     onMounted(x)
     onUpdated(x)
-    return {defaults, titles, select,navItems,line,container}
+    return {defaults, titles, select, selectedItem, line, container}
   }
 }
 </script>
