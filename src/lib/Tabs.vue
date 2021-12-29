@@ -20,7 +20,7 @@
 <script lang="ts">
 
 import Tab from './Tab.vue'
-import {computed, onMounted, onUpdated, ref} from "vue";
+import {onMounted, ref, watchEffect} from "vue";
 
 export default {
   name: "Tabs",
@@ -44,16 +44,18 @@ export default {
     const select = (title) => {
       context.emit("update:selected", title)
     }
-    const x = () => {
-      const {width} = selectedItem.value.getBoundingClientRect();
-      const {left: left1} = container.value.getBoundingClientRect()
-      line.value.style.width = width + 'px'
-      const {left: left2} = selectedItem.value.getBoundingClientRect()
-      const left = left2 - left1
-      line.value.style.left = left + 'px'
-    }
-    onMounted(x)
-    onUpdated(x)
+    onMounted(()=>{
+      watchEffect(()=>{
+        if(selectedItem.value&&line.value){
+          const {width} = selectedItem.value.getBoundingClientRect();
+          const {left: left1} = container.value.getBoundingClientRect()
+          line.value.style.width = width + 'px'
+          const {left: left2} = selectedItem.value.getBoundingClientRect()
+          const left = left2 - left1
+          line.value.style.left = left + 'px'
+        }
+      })
+    })
     return {defaults, titles, select, selectedItem, line, container}
   }
 }
