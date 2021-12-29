@@ -1,5 +1,5 @@
 <template>
-  <Tabs>
+  <Tabs v-model:selected="tit">
     <Tab title="导航1">内容1</Tab>
     <Tab title="导航2">内容2</Tab>
   </Tabs>
@@ -8,9 +8,14 @@
 <script lang="ts">
 import Tabs from "../lib/Tabs.vue";
 import Tab from "../lib/Tab.vue";
+import {ref} from "vue";
 export default {
   name: "TabsDemo",
-  components: {Tab, Tabs}
+  components: {Tab, Tabs},
+  setup(){
+    const tit=ref('导航1')
+    return {tit}
+  }
 }
 </script>
 

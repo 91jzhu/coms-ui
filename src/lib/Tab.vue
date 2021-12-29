@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div>
     <slot/>
   </div>
 </template>
@@ -9,12 +9,6 @@ import {ref} from "vue";
 
 export default {
   name: "Tab",
-  props:{
-    title:{
-      type:String,
-      required:true
-    }
-  },
 
 }
 </script>
