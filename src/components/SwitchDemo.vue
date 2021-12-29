@@ -1,5 +1,5 @@
 <template>
-  <Switch v-model:value="bool" type="right" :func="onClick"/>
+  <Switch v-model:value="bool" type="left" :func="onClick"/>
 </template>
 
 <script lang="ts">
@@ -7,7 +7,7 @@ import Switch from '../lib/Switch.vue'
 import {ref} from "vue";
 export default {
   name: "SwitchDemo",
-  components: {Switch},
+  components: { Switch},
   setup(){
     const bool=ref(false)
     const onClick=()=>{

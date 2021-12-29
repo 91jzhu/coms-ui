@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <slot/>
-  </div>
+  <slot/>
 </template>
 
 <script lang="ts">
 export default {
-  name: "Tabs"
+  name: "Tab"
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

@@ -26,7 +26,7 @@ export default {
     const toggle=()=>{
       x.value=!x.value
     }
-    const f1=()=>{console.log('ok');return false}
+    const f1=()=>{console.log('ok');show()}
     const f2=()=>{console.log('cancel')}
     const show=()=>{
       openDialog({title:'新标题',content:'新内容',ok:f1,cancel:f2})
