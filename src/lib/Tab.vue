@@ -1,10 +1,21 @@
 <template>
-  <slot/>
+  <div class="wrapper">
+    <slot/>
+  </div>
 </template>
 
 <script lang="ts">
+import {ref} from "vue";
+
 export default {
-  name: "Tab"
+  name: "Tab",
+  props:{
+    title:{
+      type:String,
+      required:true
+    }
+  },
+
 }
 </script>
 
