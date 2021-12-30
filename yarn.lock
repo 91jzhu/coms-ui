@@ -254,7 +254,7 @@
     "@types/mime" "^1"
     "@types/node" "*"
 
-"@vue/compiler-core@3.2.26":
+"@vue/compiler-core@3.2.26", "@vue/compiler-core@^3.2.26":
   version "3.2.26"
   resolved "https://registry.npmmirror.com/@vue/compiler-core/download/@vue/compiler-core-3.2.26.tgz#9ab92ae624da51f7b6064f4679c2d4564f437cc8"
   integrity sha512-N5XNBobZbaASdzY9Lga2D9Lul5vdCIOXvUMd6ThcN8zgqQhPKfCV+wfAJNNJKQkSHudnYRO2gEB+lp0iN3g2Tw==
@@ -1229,6 +1229,11 @@ magic-string@^0.25.7:
   integrity sha1-P0l9b9NMZpxnmNy4IfLvMfVEUFE=
   dependencies:
     sourcemap-codec "^1.4.4"
+
+marked@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.npmmirror.com/marked/download/marked-4.0.8.tgz#ef127626ac65786460f9420d57cc8d5ffdcacbed"
+  integrity sha512-dkpJMIlJpc833hbjjg8jraw1t51e/eKDoG8TFOgc5O0Z77zaYKigYekTDop5AplRoKFGIaoazhYEhGkMtU3IeA==
 
 media-typer@0.3.0:
   version "0.3.0"

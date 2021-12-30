@@ -1,3 +1,6 @@
+<demo>
+支持 disabled
+</demo>
 <template>
   <Switch v-model:value="bool" disabled></Switch>
 </template>
@@ -6,7 +9,7 @@
 import Switch from '../../lib/Switch.vue'
 import {ref} from "vue";
 export default {
-  name: "SwitchDemo1",
+  name: "SwitchDemo2",
   components:{Switch},
   setup(){
     const bool=ref(false)
@@ -14,7 +17,3 @@ export default {
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

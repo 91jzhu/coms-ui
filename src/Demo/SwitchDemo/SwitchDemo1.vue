@@ -1,5 +1,9 @@
+<demo>
+常规用法
+</demo>
+
 <template>
-  <Switch v-model:value="bool1"></Switch>
+  <Switch v-model:value="bool"></Switch>
 </template>
 
 <script lang="ts">
@@ -9,12 +13,8 @@ export default {
   name: "SwitchDemo1",
   components:{Switch},
   setup(){
-    const bool1=ref(false)
-    return {bool1}
+    const bool=ref(false)
+    return {bool}
   }
 }
 </script>
-
-<style scoped lang="scss">
-
-</style>

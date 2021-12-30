@@ -9,9 +9,8 @@
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
-      <SwitchDemo1/>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool1" /&gt;</pre>
+        <pre>{{SwitchDemo1.__sourceCode }}</pre>
       </div>
     </div>
     <div class="demo">
@@ -22,11 +21,11 @@
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
-      <SwitchDemo2/>
       <div class="demo-code">
-        <pre>&lt;Switch v-model:value="bool2" disabled /&gt;</pre>
+        <pre>{{SwitchDemo2.__sourceCode }}</pre>
       </div>
     </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -44,7 +43,7 @@ export default {
     const bool1 = ref(false)
     const bool2 = ref(false)
 
-    return {bool1, bool2,}
+    return {bool1, bool2,SwitchDemo1,SwitchDemo2}
   }
 }
 </script>
