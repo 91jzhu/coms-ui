@@ -16,7 +16,7 @@ export default {
   setup(props,context){
     const toggle=()=>{
       context.emit('update:value',!props.value)
-      props.func()
+      props.func?.()
     }
     return {toggle}
   }
