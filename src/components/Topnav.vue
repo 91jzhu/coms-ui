@@ -1,15 +1,12 @@
 <template>
   <div class="topnav">
     <div class="logo">
-      <svg class="icon">
-        <use xlink:href="#icon-taiyang2"></use>
-      </svg>
+      <slot name="sun"/>
     </div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <slot name="doc"/>
     </ul>
-    <span class="toggleAside" @click="toggleAside"></span>
+    <slot name="toggleAside"/>
   </div>
 </template>
 
@@ -31,7 +28,6 @@ export default {
 <style lang="scss" scoped>
 
 .topnav {
-  //color:#3f2a4e;
   color:#433054;
   font-size: large;
   display: flex;
@@ -47,10 +43,6 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
-    > svg{
-      width:32px;
-      height:32px;
-    }
   }
 
   > .menu {
@@ -64,8 +56,7 @@ export default {
   }
 
   .toggleAside {
-    display: none;
-    background: gray;
+    display: block;
     width: 30px;
     height: 30px;
     position: absolute;

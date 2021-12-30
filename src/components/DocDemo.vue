@@ -1,5 +1,7 @@
 <template>
-  doc默认页面
+  <div class="demo">
+    doc默认页面
+  </div>
 </template>
 
 <script lang="ts">
@@ -9,5 +11,7 @@ export default {
 </script>
 
 <style scoped>
-
+.demo{
+  background: #f9eee3
+}
 </style>

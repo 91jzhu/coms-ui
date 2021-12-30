@@ -1,11 +1,25 @@
 <template>
-  <div>
-    <Topnav/>
-  </div>
   <div class="layout">
-    <Topnav class="nav"/>
     <div class="content">
+      <router-link to="/">
+        <svg class="icon1">
+          <use xlink:href="#icon-back">
+          </use>
+        </svg>
+      </router-link>
+      <svg class="icon2">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
       <aside v-show="asideVisible">
+        <h2>文档</h2>
+        <ol>
+          <li>
+            <router-link to="/doc/intro">介绍</router-link>
+          </li>
+          <li>
+            <router-link to="/doc/install">安装</router-link>
+          </li>
+        </ol>
         <h2>组件列表</h2>
         <ol>
           <li>
@@ -45,48 +59,57 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon1{
+  position: absolute;
+  top:6px;
+  left:47px;
+  z-index: 1;
+  width:56px;
+  height:56px;
+}
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
-
-  > .nav {
-    flex-shrink: 0;
-  }
-
+  position: relative;
   > .content {
+    display: flex;
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
     @media (max-width: 500px) {
       padding-left: 0;
+      > .icon2{
+        position: absolute;
+        top:0;
+        left:47px;
+        z-index: 1;
+        width:56px;
+        height:56px;
+      }
     }
-  }
-}
+    > aside {
+      flex-shrink: 0;
+    }
 
-.content {
-  display: flex;
+    > main {
+      flex-grow: 1;
+      padding: 16px;
+      background: #f9eee3;
+    }
 
-  > aside {
-    flex-shrink: 0;
-  }
-
-  > main {
-    flex-grow: 1;
-    padding: 16px;
-    background: lightgreen;
   }
 }
 
 aside {
-  background: lightblue;
+  background: #ffa27d;
   width: 150px;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
-  padding: 70px 10px 20px 20px;
-  height: 100%;
-
+  padding: 10vh 10px 20px 20px;
+  height: 100vh;
+  color:#0b1c3e;
   > h2 {
     margin-bottom: 4px;
   }
@@ -100,5 +123,10 @@ aside {
 
 main {
   overflow: auto;
+  position: absolute;
+  bottom:0;
+  right:0;
+  height:90vh;
+  width:calc(100% - 150px);
 }
 </style>
