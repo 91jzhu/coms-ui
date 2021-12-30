@@ -1,6 +1,10 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-taiyang2"></use>
+      </svg>
+    </div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
@@ -25,9 +29,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .topnav {
-  color:#233549;
-  font-size: small;
+  //color:#3f2a4e;
+  color:#433054;
+  font-size: large;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -41,6 +47,10 @@ export default {
   > .logo {
     max-width: 6em;
     margin-right: auto;
+    > svg{
+      width:32px;
+      height:32px;
+    }
   }
 
   > .menu {
