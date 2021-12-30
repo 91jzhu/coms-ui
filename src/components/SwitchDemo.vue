@@ -4,25 +4,25 @@
     <div class="demo">
       <h2>常规用法</h2>
       <div class="demo-component">
-        <Switch v-model:value="bool1"/>
+        <component :is="SwitchDemo1"/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>{{SwitchDemo1.__sourceCode }}</pre>
+        <pre class="language-html" v-html="Prism.highlight(SwitchDemo1.__sourceCode,Prism.languages.html,'html') "></pre>
       </div>
     </div>
     <div class="demo">
       <h2>支持 disabled </h2>
       <div class="demo-component">
-        <Switch v-model:value="bool2" disabled/>
+        <component :is="SwitchDemo2" disabled/>
       </div>
       <div class="demo-actions">
         <Button>查看代码</Button>
       </div>
       <div class="demo-code">
-        <pre>{{SwitchDemo2.__sourceCode }}</pre>
+        <pre class="language-html" v-html="Prism.highlight(SwitchDemo2.__sourceCode,Prism.languages.html,'html') "></pre>
       </div>
     </div>
   </div>
@@ -34,6 +34,10 @@ import Button from '../lib/Button.vue'
 import SwitchDemo1 from '../Demo/SwitchDemo/SwitchDemo1.vue'
 import SwitchDemo2 from '../Demo/SwitchDemo/SwitchDemo2.vue'
 
+import Prism from 'prismjs'
+import 'prismjs/themes/prism-coy.css'
+
+
 import {ref} from "vue";
 
 export default {
@@ -43,7 +47,7 @@ export default {
     const bool1 = ref(false)
     const bool2 = ref(false)
 
-    return {bool1, bool2,SwitchDemo1,SwitchDemo2}
+    return {bool1, bool2,SwitchDemo1,SwitchDemo2,Prism}
   }
 }
 </script>
