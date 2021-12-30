@@ -1,6 +1,6 @@
 <template>
-  <div class="demo">
-    doc默认页面
+  <div class="wrapper">
+    <h1>文档</h1>
   </div>
 </template>
 
@@ -10,8 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.demo{
-  background: #f9eee3
+<style scoped lang="scss">
+.wrapper{
+
 }
 </style>
