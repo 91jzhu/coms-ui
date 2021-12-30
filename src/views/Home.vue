@@ -43,13 +43,14 @@ export default {
 }
 .topnavAndBanner {
   background: linear-gradient(0deg, rgba(255, 188, 151, 1) 0%, rgba(247, 136, 135, 1) 100%);
+  clip-path: ellipse(70% 60% at 50% 40%);
 }
 
 .banner {
   color: #ffffff;
   font-size: x-large;
   font-weight: bolder;
-  padding: 100px 0 60px 0;
+  padding: 100px 0 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
