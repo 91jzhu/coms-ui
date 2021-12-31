@@ -18,9 +18,8 @@
 </template>
 
 <script lang="ts">
-
 import Tab from './Tab.vue'
-import {onMounted, ref, watchEffect} from "vue";
+import { onMounted, ref, watchEffect} from "vue";
 
 export default {
   name: "Tabs",
@@ -44,18 +43,19 @@ export default {
     const select = (title) => {
       context.emit("update:selected", title)
     }
-    onMounted(()=>{
-      watchEffect(()=>{
-        if(selectedItem.value&&line.value){
-          const {width} = selectedItem.value.getBoundingClientRect();
-          const {left: left1} = container.value.getBoundingClientRect()
-          line.value.style.width = width + 'px'
-          const {left: left2} = selectedItem.value.getBoundingClientRect()
-          const left = left2 - left1
-          line.value.style.left = left + 'px'
+    onMounted(() => {
+          watchEffect(() => {
+            if (selectedItem.value && line.value) {
+              const {width} = selectedItem.value.getBoundingClientRect();
+              const {left: left1} = container.value.getBoundingClientRect()
+              line.value.style.width = width + 'px'
+              const {left: left2} = selectedItem.value.getBoundingClientRect()
+              const left = left2 - left1
+              line.value.style.left = left + 'px'
+            }
+          })
         }
-      })
-    })
+    )
     return {defaults, titles, select, selectedItem, line, container}
   }
 }
@@ -71,6 +71,7 @@ $border-color: #d9d9d9;
     color: $color;
     border-bottom: 1px solid $border-color;
     position: relative;
+    //flex-direction: column;
     &-item {
       padding: 8px 0;
       margin: 0 16px;
@@ -84,6 +85,7 @@ $border-color: #d9d9d9;
         color: $blue;
       }
     }
+
     &-indicator {
       position: absolute;
       height: 3px;

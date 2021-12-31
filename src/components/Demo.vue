@@ -4,10 +4,10 @@
       <div class="demo-component">
         <component :is="component"/>
       </div>
-      <div class="demo-actions">
+      <div class="demo-actions" >
         <Button @click="codeVisible=!codeVisible">查看代码</Button>
       </div>
-      <div class="demo-code" v-show="codeVisible">
+      <div class="demo-code" v-show="codeVisible" :class="{wave:codeVisible}">
         <pre class="language-html" v-html="html"></pre>
       </div>
     </div>
@@ -38,6 +38,23 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.wave {
+  animation: wave 0.82s linear;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes wave {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.4;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;

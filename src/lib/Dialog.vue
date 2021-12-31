@@ -41,12 +41,10 @@ export default {
   },
   setup(props, context) {
     const close = () => {
-      console.log(props);
       context.emit('update:visible', !props.visible)
     }
     const ok = () => {
       if (props.ok && props.ok() !== false) {
-        props.ok()
         close()
       }
     }

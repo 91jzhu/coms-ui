@@ -127,7 +127,7 @@ main {
   position: absolute;
   bottom:0;
   right:0;
-  height:90vh;
+  height:100vh;
   width:calc(100% - 150px);
 }
 </style>
