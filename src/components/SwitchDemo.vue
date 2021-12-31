@@ -8,9 +8,10 @@
 import SwitchDemo1 from '../Demo/SwitchDemo/SwitchDemo1.vue'
 import SwitchDemo2 from '../Demo/SwitchDemo/SwitchDemo2.vue'
 import Demo from './Demo.vue'
+import Button from "../lib/Button.vue";
 export default {
   name: "SwitchDemo",
-  components: {Demo, SwitchDemo1,SwitchDemo2},
+  components: {Button, Demo, SwitchDemo1,SwitchDemo2},
   setup() {
     return {SwitchDemo1,SwitchDemo2}
   }

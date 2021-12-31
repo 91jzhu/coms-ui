@@ -1,13 +1,25 @@
 <template>
   <div class="layout">
     <div class="content">
+      <div class="nav">
 
-      <router-link to="/">
-        <svg class="icon1">
-          <use xlink:href="#icon-back">
-          </use>
-        </svg>
-      </router-link>
+        <div>
+          <svg class="icon icon1">
+            <use xlink:href="#icon-doc">
+            </use>
+          </svg>
+        </div>
+
+        <div>
+          <router-link to="/">
+            <svg class="icon icon2">
+              <use xlink:href="#icon-taiyang2"></use>
+            </svg>
+          </router-link>
+        </div>
+
+      </div>
+
 
       <aside v-show="asideVisible">
         <h2>文档</h2>
@@ -38,7 +50,7 @@
           </li>
         </ol>
       </aside>
-      <main>
+      <main @click="close">
         <router-view/>
       </main>
     </div>
@@ -61,37 +73,36 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon1{
-  position: absolute;
-  top:6px;
-  left:12px;
-  z-index: 1;
+.icon{
   width:56px;
   height:56px;
+  &.icon1{
+    position: absolute;
+    top:2vh;
+    left:75px;
+    margin-left: -28px;
+    z-index: 2;
+  }
+  &.icon2{
+    position: absolute;
+    top:1vh;
+    left:50vw;
+    margin-left: -28px;
+  }
+
 }
+
 .layout {
   display: flex;
   flex-direction: column;
   height: 100vh;
   position: relative;
+
   > .content {
     display: flex;
     flex-grow: 1;
     padding-top: 60px;
     padding-left: 156px;
-    @media (max-width: 500px) {
-      padding-left: 0;
-    }
-    > aside {
-      flex-shrink: 0;
-    }
-
-    > main {
-      flex-grow: 1;
-      padding: 16px;
-      background: #f9eee3;
-    }
-
   }
 }
 
@@ -101,22 +112,30 @@ aside {
   position: fixed;
   bottom: 0;
   left: 0;
-  padding: 10vh 0 20px 0;
+  padding: 0 0 36px 0;
   height: 100vh;
-  color:#0b1c3e;
+  color: #0b1c3e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   > h2 {
     margin-bottom: 4px;
-    padding:0 16px;
+    padding: 0 16px;
   }
 
   > ol {
     > li {
-      > a{
+      > a {
+        width: 150px;
+        text-align: center;
         display: block;
-        padding:12px 32px;
+        padding: 12px 32px;
       }
-      .router-link-active{
-        background:#f9eee3 ;
+
+      .router-link-active {
+        background: #f9eee3;
       }
     }
   }
@@ -125,9 +144,9 @@ aside {
 main {
   overflow: auto;
   position: absolute;
-  bottom:0;
-  right:0;
-  height:100vh;
-  width:calc(100% - 150px);
+  bottom: 0;
+  right: 0;
+  height: 90vh;
+  width: calc(100% - 156px);
 }
 </style>

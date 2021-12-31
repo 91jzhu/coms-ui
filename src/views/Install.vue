@@ -37,7 +37,7 @@ export default {
   min-width: 100%;
   padding: 20px 20px 40px;
   min-height: 40%;
-
+  margin-top: 2px;
   > .markdown-body{
     padding:24px;
     background: #f9eee3;

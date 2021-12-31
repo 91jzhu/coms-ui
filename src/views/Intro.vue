@@ -33,6 +33,7 @@ export default {
   border-radius: 12px;
   position: relative;
   min-width: 100%;
+  margin-top: 2px;
   padding: 20px 20px 40px;
   min-height: 40%;
 

@@ -3,7 +3,7 @@
     <div class="topnavAndBanner">
       <Topnav>
         <template v-slot:sun>
-          <svg class="icon" style="width:32px;height:32px">
+          <svg class="icon" style="width:56px;height:56px">
             <use xlink:href="#icon-taiyang2"></use>
           </svg>
         </template>
@@ -34,7 +34,7 @@
             <use xlink:href="#icon-ts"></use>
           </svg>
           <h3>基于 TypeScript </h3>
-          <p>源代码采用 TypeScript 书写（非严格检查）</p>
+          <p>采用 TypeScript 书写（非严格检查）</p>
         </li>
         <li>
           <svg>
@@ -59,8 +59,8 @@ export default {
 
 <style lang="scss" scoped>
 .features {
-  margin: 64px auto;
-  width: 400px;
+  margin: 16px auto;
+  width: 300px;
   @media (min-width: 800px) {
     width: 800px;
   }
