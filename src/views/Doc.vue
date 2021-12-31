@@ -1,14 +1,6 @@
 <template>
   <div class="layout">
     <div class="content">
-      <div class="nav">
-
-        <div>
-          <svg class="icon icon1">
-            <use xlink:href="#icon-doc">
-            </use>
-          </svg>
-        </div>
 
         <div>
           <router-link to="/">
@@ -18,11 +10,17 @@
           </router-link>
         </div>
 
-      </div>
-
-
       <aside v-show="asideVisible">
-        <h2>文档</h2>
+        <div>
+          <svg class="icon icon1">
+            <use xlink:href="#icon-doc">
+            </use>
+          </svg>
+        </div>
+
+        <div class="title">
+          <h2>文档</h2>
+        </div>
         <ol>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
@@ -34,7 +32,9 @@
             <router-link to="/doc/started">开始使用</router-link>
           </li>
         </ol>
-        <h2>组件列表</h2>
+        <div class="title">
+          <h2>组件列表</h2>
+        </div>
         <ol>
           <li>
             <router-link to="/doc/switch">Switch 组件</router-link>
@@ -73,6 +73,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title{
+  text-align: center;
+}
 .icon{
   width:56px;
   height:56px;
@@ -89,7 +92,6 @@ export default {
     left:50vw;
     margin-left: -28px;
   }
-
 }
 
 .layout {
@@ -110,16 +112,11 @@ aside {
   background: #ffa27d;
   width: 150px;
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
-  padding: 0 0 36px 0;
+  padding: 96px 0 36px 0;
   height: 100vh;
   color: #0b1c3e;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
