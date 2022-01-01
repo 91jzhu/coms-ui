@@ -4,8 +4,8 @@
       <div class="demo-component">
         <component :is="component"/>
       </div>
-      <div class="demo-actions" >
-        <Button @click="codeVisible=!codeVisible">查看代码</Button>
+      <div class="demo-actions">
+        <Button @click="codeVisible=!codeVisible">< /  ></Button>
       </div>
       <div class="demo-code" v-show="codeVisible" :class="{wave:codeVisible}">
         <pre class="language-html" v-html="html"></pre>
