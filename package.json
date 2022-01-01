@@ -1,5 +1,5 @@
 {
-  "name": "Coms-UI",
+  "name": "coms-ui",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

@@ -32,22 +32,26 @@ export default {
   border: 3px dashed grey;
   border-radius: 12px;
   position: relative;
-  min-width: 100%;
-  margin-top: 2px;
-  padding: 20px 20px 40px;
-  min-height: 40%;
+  margin-top: 12px;
+  padding:24px;
+  display: flex;
+  justify-content: center;
 
   > .markdown-body{
-    padding:24px;
+    flex-grow: 1;
     background: #f9eee3;
+    > h1{
+      text-align: left;
+    }
     > .words {
       border-radius: 12px;
       margin-top: 24px;
-
+      padding-bottom: 12px;
       > .next {
         position: absolute;
-        right: 10px;
-        bottom: 10px;
+        left:44.5%;
+        transform: translateX(-44.5%);
+        top:84%;
         > a{
           text-decoration:none;
         }

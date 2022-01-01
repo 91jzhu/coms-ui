@@ -59,7 +59,10 @@ $border-color: #d9d9d9;
 .demo {
   border: 1px solid $border-color;
   margin: 16px 0 32px;
-
+  @media (max-width: 500px){
+    max-width: 490px;
+    overflow: hidden;
+  }
   > h2 {
     font-size: 20px;
     padding: 8px 16px;
@@ -76,13 +79,17 @@ $border-color: #d9d9d9;
   }
 
   &-code {
-    padding: 8px 16px;
     border-top: 1px dashed $border-color;
 
     > pre {
+      padding:24px;
       line-height: 1.1;
       font-family: Consolas, 'Courier New', Courier, monospace;
       margin: 0;
+      @media (max-width: 500px){
+        max-width: 480px;
+        overflow: auto;
+      }
     }
   }
 }

@@ -12,7 +12,8 @@
         yarn add coms-ui
       </code></pre>
         <div class="next">
-          <router-link to="/doc/started"><Button>下一节:开始使用</Button></router-link>
+          <router-link to="/doc/intro"><Button>上一节: 介绍</Button></router-link>
+          <router-link to="/doc/started"><Button>下一节: 开始使用</Button></router-link>
         </div>
       </div>
     </div>
@@ -29,33 +30,38 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+pre{
+  @media (max-width: 500px){
+    max-width:320px;
+    overflow: auto;
+  }
+}
 .wrapper {
   border: 3px dashed grey;
   border-radius: 12px;
   position: relative;
-  min-width: 100%;
-  padding: 20px 20px 40px;
-  min-height: 40%;
-  margin-top: 2px;
+  margin-top: 12px;
+  padding:24px;
+  display: flex;
+  justify-content: center;
   > .markdown-body{
-    padding:24px;
+    flex-grow: 1;
     background: #f9eee3;
-
     > .words {
       border-radius: 12px;
       margin-top: 24px;
-
+      padding-bottom: 12px;
       > .next {
-        > a{
-          text-decoration-line: none;
-        }
         position: absolute;
-        right: 10px;
-        bottom: 10px;
+        left:44.5%;
+        transform: translateX(-44.5%);
+        top:90%;
+        display: flex;
+        > a{
+          text-decoration:none;
+        }
       }
     }
   }
-
 }
 </style>

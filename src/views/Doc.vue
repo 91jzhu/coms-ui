@@ -2,15 +2,21 @@
   <div class="layout">
     <div class="content">
 
-        <div>
-          <router-link to="/">
-            <svg class="icon icon2">
-              <use xlink:href="#icon-taiyang2"></use>
-            </svg>
-          </router-link>
-        </div>
-
+      <div>
+        <router-link to="/">
+          <svg class="icon icon2">
+            <use xlink:href="#icon-taiyang2"></use>
+          </svg>
+        </router-link>
+      </div>
+      <div>
+        <svg class="icon iconMenu" @click="toggle">
+          <use xlink:href="#icon-menu">
+          </use>
+        </svg>
+      </div>
       <aside v-show="asideVisible">
+
         <div>
           <svg class="icon icon1">
             <use xlink:href="#icon-doc">
@@ -66,30 +72,59 @@ export default {
   components: {Topnav},
   setup() {
     const asideVisible = inject<Ref<boolean>>('variable')
-    return {asideVisible}
+    const toggle=()=>{
+      asideVisible.value=!asideVisible.value
+    }
+    const close=()=>{
+      if(document.documentElement.clientWidth<500){
+        if(asideVisible.value){
+          asideVisible.value=false
+        }
+      }
+    }
+    return {asideVisible,toggle,close}
   }
 }
 
 </script>
 
 <style lang="scss" scoped>
-.title{
+.title {
   text-align: center;
 }
-.icon{
-  width:56px;
-  height:56px;
-  &.icon1{
+
+.icon {
+  width: 56px;
+  height: 56px;
+
+  &.iconMenu {
+    display: none;
+    @media (max-width: 500px) {
+      display: block;
+      position: absolute;
+      top: 2.2vh;
+      left: 75px;
+      margin-left: -28px;
+      z-index: 3;
+    }
+  }
+
+  &.icon1 {
+    display: block;
     position: absolute;
-    top:2vh;
-    left:75px;
+    top: 2vh;
+    left: 75px;
     margin-left: -28px;
     z-index: 2;
+    @media (max-width: 500px) {
+      display: none;
+    }
   }
-  &.icon2{
+
+  &.icon2 {
     position: absolute;
-    top:1vh;
-    left:50vw;
+    top: 2vh;
+    left: 50vw;
     margin-left: -28px;
   }
 }
@@ -111,12 +146,16 @@ export default {
 aside {
   background: #ffa27d;
   width: 150px;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   padding: 96px 0 36px 0;
   height: 100vh;
   color: #0b1c3e;
+  @media (max-width: 500px){
+    z-index: 2;
+  }
+
   > h2 {
     margin-bottom: 4px;
     padding: 0 16px;
@@ -145,5 +184,8 @@ main {
   right: 0;
   height: 90vh;
   width: calc(100% - 156px);
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 }
 </style>

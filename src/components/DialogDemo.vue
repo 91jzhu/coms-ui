@@ -1,7 +1,13 @@
 <template>
-  <h1>Dialog 组件示例</h1>
+  <div class="wrapper">
+    <h1>Dialog 组件示例</h1>
+  </div>
   <Demo :component="DialogDemo1"/>
   <Demo :component="DialogDemo2"/>
+  <div class="next">
+    <router-link to="/doc/button"><Button>上一节: Button 组件</Button></router-link>
+    <router-link to="/doc/tabs"><Button>下一节: Tabs 组件</Button></router-link>
+  </div>
 </template>
 
 <script lang="ts">
@@ -30,6 +36,21 @@ export default {
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+.next{
+  display: flex;
+  padding-bottom: 36px;
+  position: absolute;
+  @media (max-width:500px){
+    left:50%;
+    transform: translateX(-50%);
+  }
+}
+.wrapper{
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 500px){
+    justify-content: center;
+  }
+}
 </style>

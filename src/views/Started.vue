@@ -21,6 +21,7 @@
  </code></pre>
 
         <div class="next">
+          <router-link to="/doc/install"><Button>上一节: 安装</Button></router-link>
           <router-link to="/doc/switch"><Button>下一节: Switch 组件</Button></router-link>
         </div>
       </div>
@@ -37,33 +38,48 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+pre{
+  @media (max-width: 500px){
+    max-width:320px;
+    overflow: auto;
+    margin-left: -6px;
+  }
+}
 .wrapper {
   border: 3px dashed grey;
   border-radius: 12px;
   position: relative;
-  min-width: 100%;
-  padding: 20px 20px 40px;
-  min-height: 40%;
-  margin-top: 2px;
-  > .markdown-body {
-    padding: 24px;
+  margin-top: 12px;
+  padding:24px;
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width:500px){
+    justify-content: center;
+    max-width: 414px;
+    overflow: hidden;
+  }
+  > .markdown-body{
     background: #f9eee3;
-
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 500px){
+      align-items: center;
+    }
     > .words {
       border-radius: 12px;
-      margin-top: 24px;
-
+      margin-top: 8px;
+      padding-bottom: 8px;
       > .next {
-        > a{
-          text-decoration-line: none;
-        }
         position: absolute;
-        right: 10px;
-        bottom: 10px;
+        left:44.5%;
+        transform: translateX(-44.5%);
+        top:94%;
+        display: flex;
+        > a{
+          text-decoration:none;
+        }
       }
     }
   }
-
 }
 </style>

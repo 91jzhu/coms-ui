@@ -1,10 +1,16 @@
 <template>
-  <h1>Button 组件示例</h1>
+  <div class="wrapper">
+    <h1>Button 组件示例</h1>
+  </div>
   <Demo :component="ButtonDemo1"/>
   <Demo :component="ButtonDemo2"/>
   <Demo :component="ButtonDemo3"/>
   <Demo :component="ButtonDemo4"/>
   <Demo :component="ButtonDemo5"/>
+  <div class="next">
+    <router-link to="/doc/switch"><Button>上一节: Switch 组件</Button></router-link>
+    <router-link to="/doc/dialog"><Button>下一节: Dialog 组件</Button></router-link>
+  </div>
 </template>
 <script lang="ts">
 import Button from "../lib/Button.vue";
@@ -22,3 +28,22 @@ export default {
   },
 };
 </script>
+
+<style scoped lang="scss">
+.next{
+  display: flex;
+  padding-bottom: 36px;
+  position: absolute;
+  @media (max-width:500px){
+    left:50%;
+    transform: translateX(-50%);
+  }
+}
+.wrapper{
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 500px){
+    justify-content: center;
+  }
+}
+</style>

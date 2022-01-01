@@ -1,7 +1,13 @@
 <template>
-  <h1>Switch 组件示例</h1>
+  <div class="wrapper">
+    <h1>Switch 组件示例</h1>
+  </div>
   <Demo :component="SwitchDemo1"/>
   <Demo :component="SwitchDemo2"/>
+  <div class="next">
+    <router-link to="/doc/install"><Button>上一节: 安装</Button></router-link>
+    <router-link to="/doc/button"><Button>下一节: Button 组件</Button></router-link>
+  </div>
 </template>
 
 <script lang="ts">
@@ -18,32 +24,21 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-$border-color: #d9d9d9;
-.demo {
-  border: 1px solid $border-color;
-  margin: 16px 0 32px;
-  >h2 {
-    font-size: 20px;
-    padding: 8px 16px;
-    border-bottom: 1px solid $border-color;
-  }
-  &-component {
-    padding: 16px;
-  }
-  &-actions {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-  }
-  &-code {
-    padding: 8px 16px;
-    border-top: 1px dashed $border-color;
-    >pre {
-      line-height: 1.1;
-      font-family: Consolas, 'Courier New', Courier, monospace;
-      margin: 0;
-    }
+<style lang="scss">
+.next{
+  display: flex;
+  position: absolute;
+  @media (max-width:500px){
+    left:50%;
+    transform: translateX(-50%);
+    padding-bottom: 24px;
   }
 }
-
+.wrapper{
+  display: flex;
+  justify-content: flex-start;
+  @media (max-width: 500px){
+    justify-content: center;
+  }
+}
 </style>

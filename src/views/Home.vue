@@ -3,7 +3,7 @@
     <div class="topnavAndBanner">
       <Topnav>
         <template v-slot:sun>
-          <svg class="icon" style="width:56px;height:56px">
+          <svg class="icon sun">
             <use xlink:href="#icon-taiyang2"></use>
           </svg>
         </template>
@@ -15,7 +15,7 @@
         <h1>Coms-UI</h1>
         <h2>一个有意思的 ui 框架</h2>
         <p class="actions">
-          <a href="https://github.com/91jzhu">Github</a>
+          <a href="https://github.com/91jzhu/coms-ui">Github</a>
           <router-link to="/doc">开始</router-link>
         </p>
       </div>
@@ -58,6 +58,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.sun{
+  position: absolute;
+  width:56px;
+  height:56px;
+  top:2vh;
+  left: 50vw;
+  margin-left: -28px;
+}
 .features {
   margin: 16px auto;
   width: 300px;
